@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de réclamation</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Formulaire de contact</h1>
+    </header>
+        <main>
+            <form action="result.php" method="post">
+                <div>
+                    <label for="firstname">Votre prénom</label>
+                    <input type="text" name="firstname" id="firstname" required>
+                </div>
+                <div>
+                    <label for="name">Votre nom</label>
+                    <input type="text" name="name" id="tname" required>
+                </div>
+                <div>
+                    <label for="email">Votre email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+
+                <div>
+                    <label for="phone">Votre numéro</label>
+                    <input type="tel" name="phone" id="phone" required>
+                </div>
+
+                <div>
+                    <label for="select">Sujet</label>                
+                    <select id="select">
+                        <option value="">--Choisisez une option--</option>
+                        <option value="reclamation"> une reclamation </option>
+                        <option value="renseignement"> un renseignement </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message">Votre message: </label>
+                    <textarea name="message" id="message" rows="10" required minlength="30"></textarea>
+                </div>
+
+                <div class="button">
+                    <button type="submit">Envoyer votre message </button>
+                </div>
+            </form>
+        </main>
+
+</body>
+
+</html>
