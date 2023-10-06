@@ -6,6 +6,7 @@ $firstname = htmlentities($data['firstname']);
 $name = htmlentities($data['name']);
 $email = htmlentities($data['email']);
 $phone = htmlentities($data['phone']);
+$select = htmlentities($data['select']);
 $message = htmlentities($data['message']);
 
 $errors = [];
@@ -30,7 +31,9 @@ if (empty($phone)) {
     $errors[] = 'Le champ numéro doit être renseigné';
 }
 
-
+if (empty($select)) {
+    $errors[] = 'Le champ option doit être renseigné';
+}
 
 if (strlen($message) < 30) {
     $errors[] = 'Le champ message doit contenir plus de 30 caractères';
@@ -63,7 +66,8 @@ if (!empty($errors)) {
     <main>
         <div class="merci">
         <?php 
-        echo 'Merci ' .$firstname .' ' .$name .' de nous avoir contacter . Un de nos conseillers vous contactera soit à l’adresse ' .$email .' ou par téléphone au: '
+        echo 'Merci ' .$firstname .' ' .$name .' de nous avoir contacter pour ' .$select .'. ' 
+        .' Un de nos conseillers vous contactera soit à l’adresse: ' .$email .' ou par téléphone au: '
         .$phone .' dans les plus brefs délais pour traiter votre demande : ' .$message ; 
         ?>
         </div>
